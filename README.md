@@ -1,1 +1,1 @@
-# AutoHotKey Bindings (Mac to PC)
+# AutoHotkey Bindings (Mac to PC)
