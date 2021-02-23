@@ -52,8 +52,21 @@ Lctrl & e::Send {End}
 !Left::Send ^{Left}
 !Right::Send ^{Right}
 
-; ⌘-Tab = switch between programs.
->^Tab::Send !{Tab}
+; Remap Ctrl-Tab to Alt-Tab
+^Tab::
+Send {Alt down}{Tab}
+Keywait Control
+Send {Alt up}
+return
+
+; Remap Ctrl-Shift-Tab to Alt-Shift-Tab
+^+Tab::
+Send {Alt down}{Shift down}{Tab}
+Keywait Control
+Send {Alt up}
+Send {Shift up}
+return
+
 
 ; ⌘-q to exit.
 >^q::Send !{F4}
