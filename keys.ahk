@@ -52,11 +52,6 @@ Lctrl & e::Send {End}
 !Left::Send ^{Left}
 !Right::Send ^{Right}
 
-
->^Tab::Send, {LAlt Down}{Tab}
-#If WinExist("ahk_class MultitaskingViewFrame")
-Ctrl Up::Send, {LAlt Up}
-
 ; ⌘-q to exit.
 >^q::Send !{F4}
 
@@ -89,4 +84,9 @@ Ctrl Up::Send, {LAlt Up}
   ; Disable Alt triggering the menu
   Lalt::return
   Ralt::return
+return
+
+>^Tab::Send, {LAlt Down}{Tab}
+#IfWinActive ahk_class MultitaskingViewFrame
+  Ctrl Up::Send, {LAlt Up}
 return
