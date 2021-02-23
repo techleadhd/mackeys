@@ -52,21 +52,10 @@ Lctrl & e::Send {End}
 !Left::Send ^{Left}
 !Right::Send ^{Right}
 
-; Remap Ctrl-Tab to Alt-Tab
-^Tab::
-Send {Alt down}{Tab}
-Keywait Control
-Send {Alt up}
-return
 
-; Remap Ctrl-Shift-Tab to Alt-Shift-Tab
-^+Tab::
-Send {Alt down}{Shift down}{Tab}
-Keywait Control
-Send {Alt up}
-Send {Shift up}
-return
-
+>^Tab::Send, {LAlt Down}{Tab}
+#If WinExist("ahk_class MultitaskingViewFrame")
+Ctrl Up::Send, {LAlt Up}
 
 ; ⌘-q to exit.
 >^q::Send !{F4}
