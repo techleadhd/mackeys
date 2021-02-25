@@ -89,4 +89,4 @@ return
 >^Tab::Send, {LAlt Down}{Tab}
 #IfWinActive ahk_class MultitaskingViewFrame
   Ctrl Up::Send, {LAlt Up}
-return
+#IfWinActive
